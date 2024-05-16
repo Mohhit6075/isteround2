@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Authentication</title>
+    <link rel="stylesheet" href="styles.css">
+    
+</head>
+<body>
+
+<div class="page1">
+                                            <!-- PAGE 1 -->
+                    <!-- TASK 1 -->
+
+    <h1>User Management</h1>
+
+    <div id="app">
+        <h2>Authentication</h2>
+        <form id="login-form">
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" required>
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required>
+            <button type="submit">Login</button>
+        </form>
+                  
+        <div id="user-actions" style="display: none;"> <h2>User Actions</h2>
+            <button id="create-user">Create User</button>
+            <button id="read-user">Read User</button>
+            <button id="update-user">Update User</button>
+            <button id="delete-user">Delete User</button>
+            <div id="crud-details"></div>
+        </div>
+                  
+        <div id="error-message" class="error"></div>
+    </div>
+                
+                                                <!-- TASK 2 -->
+                                    
+    <button id="myButton">Click Me for Alerts</button><br>
+
+    <button class="nextpage">Click for next page</button>
+
+</div>    
+
+  
+                                    <!-- PAGE 2 -->
+<div class="page2">
+    
+    <!-- NAVBAR -->
+
+    <nav class="navbar" id="home" style="transition: all 2s ease-in;">
+        <img src="./img/beatsLogo.png" alt="Company Logo" class="logo">
+        <ul class="nav-items">
+          <li><a href="#">Home</a></li>
+          <li><a href="#specs">Specs</a></li>
+          <li><a href="#case">Case</a></li>
+          <li><a href="#products">Products</a></li>
+        </ul>
+        <button>Shop</button>
+      </nav>
+
+      <!-- SECTION 1 -->
+
+      <section style="background-color: black;">
+        <div class="hero-container">
+            <div class="hero-left"><img src="./img/mainImage.png" alt=""></div>
+            <div class="hero-right">
+                <img src="./img/onEar.png" class="hero-right-img">
+                <h1>Beats 3</h1>
+                <h4>Overview</h4>
+                <p>Enjoy award-winning Beats sound with wireless listening freedom and a sleek, streamlined design with comfortable padded earphones, delivering first-rate playback.</p>
+                <button> <img src="./img/shoppingBag.png" alt="">Add to Bag <span>N399K</span></button>
+            </div>
+        </div>
+        <div class="hero-footer">
+            <img src="./img/appleLogo.png" alt="">
+            <img src="./img/spotifyLogo.png" alt="">
+            <img src="./img/amazonLogo.png" alt="">
+            <img src="./img/youtubeLogo.png" class="yt">
+        </div>
+      </section>
+      
+      <!-- SECTION 2 -->
+
+      <section class="specs" id="specs">
+        <img src="./img/specsLogo.png" class="specs-img">
+        <div class="specs-content">
+            <div class="specs-left">
+                <div class="bluetooth">
+                    <img src="./img/bluetooth.png" alt="">
+                    <p>Connection</p>
+                    <p>Bluetooth v5.2</p>
+                </div>
+                <div class="battery">
+                    <img src="./img/battery.png" alt="">
+                    <p>Battery</p>
+                    <p>Duration 40hr</p>
+                </div>
+                <div class="charger">
+                    <img src="./img/charger.png" alt="">
+                    <p>Load</p>
+                    <p>Fast Charge 4.2-AAC</p>
+                </div>
+                <div class="mic">
+                    <img src="./img/mic.png" alt="">
+                    <p>Microphone</p>
+                    <p>Supports Apple Siri <br>and Google</p>
+                </div>
+            </div>
+            <div class="specs-right">
+                <img src="./img/specsImage.png" alt="">
+            </div>
+        </div>
+        
+      </section>
+
+      <!-- SECTION 3 -->
+      
+      <section class="case" id="case">
+        <img src="./img/caseLogo.png" class="caseLogo">
+        <div class="case-content">
+            <div class="case-left">
+                <img src="./img/caseImage.png" class="caseImage">
+            </div>
+            <div class="case-right">
+                <p>With a comfortable and adaptable case so that you can store it whenever you want, and keep your durability forever.</p>
+                <button><img src="./img/group.png" alt="">More Info</button>
+            </div>
+        </div>
+      </section>
+
+      <!-- SECTION 4 -->
+
+      <section class="buyNow">
+        <div class="buyNow-content">
+            <div class="buyNow-left">
+                <h1>Immense yourself in <br>your music</h1>
+                <p>Buy Now, Upto 40% OFF</p>
+                <button><img src="./img/shoppingBag.png" alt="">Buy Now</button>
+            </div>
+            <div class="buyNow-right">
+                <img src="./img/buyNowSectionImage.png" alt="">
+            </div>
+        </div>
+      </section>
+
+      <!-- SECTION 4 -->
+
+      <section class="product-section" id="products">
+        <img src="./img/productLogo.png" class="product-img">
+        <div class="products">
+            <div class="product-items">
+                <img src="./img/black.png" alt="">
+                <div class="item">
+                    <p>Black <br>N299K</p>
+                    <img src="./img/shoppingBag.png" alt="">
+                </div>
+            </div>
+            <div class="product-items">
+                <img src="./img/redBlack.png" alt="">
+                <div class="item">
+                    <p>Red Black <br>N299K</p>
+                    <img src="./img/shoppingBag.png" alt="">
+                </div>
+            </div>
+            <div class="product-items">
+                <img src="./img/nightBlack.png" alt="">
+                <div class="item">
+                    <p>Night Black <br>N299K</p>
+                    <img src="./img/shoppingBag.png" alt="">
+                </div>
+            </div>
+            <div class="product-items">
+                <img src="./img/blue.png" alt="">
+                <div class="item">
+                    <p>Blue <br>N299K</p>
+                    <img src="./img/shoppingBag.png" alt="">
+                </div>
+            </div>
+            <div class="product-items">
+                <img src="./img/twilightGray.png" alt="">
+                <div class="item">
+                    <p>Twilight Grey <br>N299K</p>
+                    <img src="./img/shoppingBag.png" alt="">
+                </div>
+            </div>
+        </div>
+      </section>
+
+      <!-- FOOTER -->
+
+      <footer class="footer">
+        <div class="logo footer-logo">
+            <img src="./img/beatsLogo.png" alt="logo">
+        </div>
+        <div class="products-list">
+            <p>Products</p>
+            <a href="">Headphones</a>
+            <a href="">Earphones</a>
+            <a href="">Earbuds</a>
+            <a href="">Accessories</a>
+        </div>
+        <div class="support-list">
+            <p>Support</p>
+            <a href="">Product Help</a>
+            <a href="">Register</a>
+            <a href="">Updates</a>
+            <a href="">Provides</a>
+        </div>
+        <div class="contact-div">
+            <div class="contact">
+                <input type="email" placeholder="Enter Your E-Mail">
+                <button><img src="./img/rightArrow.png" alt=""> Subscribe</button>
+            </div>
+            <div class="social">
+                <img src="./img/facebook.png" alt="">
+                <img src="./img/twitter.png" alt="">
+                <img src="./img/instagram.png" alt="">
+                <img src="./img/linkedin.png" alt="">
+            </div>
+        </div>
+        <div class="uparrow">
+            <a href="#home" style="transition: all 2s ease-in;"><img src="./img/upArrow.png" alt=""></a>
+        </div>
+      </footer>
+</div>
+
+  <script src="script.js"></script>
+</body>
+</html>
