@@ -14,8 +14,12 @@
 .page1{
 font-family: sans-serif;
 width: 50%;
-margin: 0 auto;
 display: block;
+margin: 0 auto;
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
 }
 
 h1 {
@@ -74,7 +78,7 @@ button {
   margin-top: 10px;
 }
 #authForm{
-  width: 40%;
+  width: 300px;
   height: 350px;
   border-radius: 10px;
   border:1px  solid black;
@@ -97,7 +101,6 @@ border:none;
 position: relative;
 z-index: 1;
 border: none;
-margin-left: 230px;
 } 
 #myButton::before{
           
@@ -128,7 +131,6 @@ border:none;
 position: relative;
 z-index: 1;
 border: none;
-margin-left: 230px;
 
 }
 .nextpage::before{
@@ -488,7 +490,7 @@ margin-left: 230px;
   background:transparent;
   color: #fff;
   padding: 10px 20px;
-  margin: 100px auto;
+  margin: 150px auto;
 }
 .products-list{
   display: flex;
@@ -627,6 +629,9 @@ margin-left: 230px;
     position: relative;
     right: 30px;
   }
+  .footer{
+    margin-top: 200px;
+  }
 }
 
 @media only screen and (max-width:560px){
@@ -669,6 +674,9 @@ margin-left: 230px;
     scale: .6;
     padding: 0 15px;
   }
+  .footer{
+    margin-top: 200px;
+  }
 
 }
 
@@ -682,6 +690,9 @@ margin-left: 230px;
     position: relative;
     right: 20px;
     
+  }
+  .footer{
+    margin-top: 200px;
   }
 }
 
@@ -750,6 +761,10 @@ margin-left: 230px;
   }
   .contact-div{
     scale: .9;
+  }
+  .footer{
+    position: relative;
+    top: 250px;
   }
 }
 }
