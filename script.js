@@ -27,85 +27,69 @@ button.addEventListener('mouseleave', function() {
 
 
 
-// Define a User class
-class User {
-    constructor(username, password) {
-      this.username = username;
-      this.password = password;
-    }
-  }
-  
-  // Define an App class
-  class App {
-    constructor() {
-      this.users = []; // Initialize users array
-      this.loggedInUser = null; // No user is logged in initially
-    }
-  
-    // Method to create a new user
-    createUser(username, password) {
-      if (!username || !password) {
-        console.error('Both username and password are required.');
-        return;
-      }
-      const newUser = new User(username, password);
-      this.users.push(newUser);
-      console.log(`User ${username} created successfully.`);
-    }
-  
-    // Method to find a user by username
-    readUser(username) {
-      return this.users.find(user => user.username === username);
-    }
-  
-    // Method to update user details
-    updateUserDetails(username, newUsername, newPassword) {
-      const userToUpdate = this.readUser(username);
-      if (!userToUpdate) {
-        console.error('User not found.');
-        return;
-      }
-      userToUpdate.username = newUsername || username;
-      userToUpdate.password = newPassword || userToUpdate.password;
-      console.log(`User ${username} updated successfully.`);
-    }
-  
-    // Method to delete a user
-    deleteUser(username) {
-      const userIndex = this.users.findIndex(user => user.username === username);
-      if (userIndex === -1) {
-        console.error('User not found.');
-        return;
-      }
-      this.users.splice(userIndex, 1);
-      console.log(`User ${username} deleted successfully.`);
-    }
-  
-    // Method to authenticate a user
-    authenticateUser(event) {
-      event.preventDefault(); // Prevent form submission
-      const username = document.getElementById('username').value;
-      const password = document.getElementById('password').value;
-      const user = this.readUser(username);
-      if (user && user.password === password) {
-        console.log('Login successful.');
-        this.loggedInUser = user;
-      } else {
-        console.error('Invalid username or password.');
-      }
-    }
-  }
-  
-  // Instantiate the App class
-  const app = new App();
-  
-  // Add event listener to login form
-  const loginForm = document.getElementById('login-form');
-  loginForm.addEventListener('submit', event => app.authenticateUser(event));
-  // Bind 'this' to app instance
+let users = [
+  { username: 'user1', password: 'password1', email: 'user1@example.com' },
+  { username: 'user2', password: 'password2', email: 'user2@example.com' }
+];
+let currentUser = null;
 
-// Add event listeners for CRUD
+function login() {
+  const username = document.getElementById('username').value;
+  const password = document.getElementById('password').value;
 
+  const user = users.find(user => user.username === username && user.password === password);
+
+  if (user) {
+    currentUser = user;
+    document.getElementById('loggedInUser').textContent = user.username;
+    document.getElementById('authForm').style.display = 'none';
+    document.getElementById('userDetails').style.display = 'block';
+  } else {
+    alert('Invalid username or password.');
+  }
+}
+
+function register() {
+  const username = document.getElementById('username').value;
+  const password = document.getElementById('password').value;
+
+  const existingUser = users.find(user => user.username === username);
+
+  if (existingUser) {
+    alert('Username already exists. Please choose a different one.');
+  } else {
+    const newUser = { username, password };
+    users.push(newUser);
+    currentUser = newUser;
+    document.getElementById('loggedInUser').textContent = newUser.username;
+    document.getElementById('authForm').style.display = 'none';
+    document.getElementById('userDetails').style.display = 'block';
+  }
+}
+
+function updateDetails() {
+  const email = prompt('Enter new email:');
+  if (email) {
+    currentUser.email = email;
+    alert('Details updated successfully.');
+  }
+}
+
+function deleteUser() {
+  const confirmation = confirm('Are you sure you want to delete your account?');
+  if (confirmation) {
+    users = users.filter(user => user !== currentUser);
+    currentUser = null;
+    document.getElementById('authForm').style.display = 'block';
+    document.getElementById('userDetails').style.display = 'none';
+  }
+}
+
+function logout() {
+  currentUser = null;
+  document.getElementById('authForm').style.display = 'block';
+  document.getElementById('userDetails').style.display = 'none';
+}
   
   
   

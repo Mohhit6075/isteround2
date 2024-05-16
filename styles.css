@@ -1,7 +1,9 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Roboto+Flex:opsz,wght@8..144,100..1000&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');*{
-  padding: 0;
+
+*{
   margin: 0;
+  padding: 0;
   box-sizing: border-box;
 }
 
@@ -19,6 +21,7 @@ display: block;
 h1 {
   text-align: center;
   margin-bottom: 20px;
+  margin-top: 20px;
 }
 
 #app {
@@ -34,20 +37,23 @@ form {
 label {
   display: block;
   margin-bottom: 5px;
+  margin-top: 10px;
 }
 
-input[type="text"],
-input[type="password"] {
+
+input {
   width: 100%;
   padding: 10px;
-  border: 1px solid #ccc;
+  border: none;
+  border-bottom: 2px solid #6306e6;
   border-radius: 3px;
 }
 
 button {
-  background-color: #4CAF50;
-  color: white;
-  padding: 10px 20px;
+  background-color: #06cf13e0;
+  color: whitesmoke;
+  width: 200px;
+  height: 50px;
   border: none;
   border-radius: 5px;
   cursor: pointer;
@@ -68,21 +74,83 @@ button {
 #crud-details {
   margin-top: 10px;
 }
+#authForm{
+  width: 40%;
+  height: 350px;
+  border-radius: 10px;
+  border:1px  solid black;
+  text-align: left;
+  padding: 10px 20px;
+  margin: 0 auto;
+  background-image: linear-gradient(66deg,rgba(251, 7, 227, 0.353),rgba(144, 0, 255, 0.419),rgba(9, 229, 9, 0.748));
+}
 
                                       /* <!-- TASK 2 --> */
 #myButton {
+width: 300px;
+height: 50px;
 padding: 10px 20px;
 font-size: 15px;
 cursor: pointer;
 margin-top: 40px;
 background: red;
+border:none;
+position: relative;
+z-index: 1;
+border: none;
+margin-left: 230px;
 } 
+#myButton::before{
+          
+  content: "";
+  position: absolute;
+  background-color: #faf4f4;
+  top: 0px;
+  left: 0;
+  right: 0;
+  bottom: 0px;
+  z-index: -1;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: all 0.8s;
+  }
+  #myButton:hover::before{
+    transform: scaleX(1);
+    background: blueviolet;
+    border-radius: 5px;
+  }
 .nextpage{
 background: #000;
-width: 200px;
+font-size: 15px;
+width: 300px;
 height: 50px;
 margin-top: 20px;
+border:none;
+position: relative;
+z-index: 1;
+border: none;
+margin-left: 230px;
+
 }
+.nextpage::before{
+          
+  content: "";
+  position: absolute;
+  background-color: #faf4f4;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: -1;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: all 0.8s;
+  }
+  .nextpage:hover::before{
+    transform: scaleX(1);
+    background: blue;
+    border-radius: 5px;
+  }
                                           /* <!-- PAGE 2 -->  */
 
 .page2{
@@ -685,4 +753,4 @@ margin-top: 20px;
     scale: .9;
   }
 }
-  
+}
